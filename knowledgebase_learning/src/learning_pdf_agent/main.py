@@ -4,6 +4,9 @@ import os
 from agent import create_learning_pdf_coach
 from tools.pdf_search import load_data
 from crew import create_learning_pdf_coach_crew  # Import the Crew creation function
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Setup logging to direct output to terminal
 logging.basicConfig(level=logging.INFO)
@@ -60,7 +63,7 @@ def agentic_AI_coach():
                 st.write(prompt)
 
             # Preserve conversation history to provide context for the agent
-            conversation_history = "\n".join([msg["content"] for msg in st.session_state.messages if msg["role"] == "assistant"])
+            conversation_history = "\n".join([str(msg["content"]) for msg in st.session_state.messages if msg["role"] == "assistant"])
             prompt_with_history = f"{conversation_history}\n{prompt}"
 
             # Process the user's question using the existing CrewAI agent
