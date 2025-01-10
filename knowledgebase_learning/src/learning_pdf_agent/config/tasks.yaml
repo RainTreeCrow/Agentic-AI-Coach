@@ -1,5 +1,0 @@
-tasks:
-  learning_pdf_coach_task:
-    description: "Perform a PDF-based search using the uploaded files to answer user questions."
-    agent: learning_pdf_coach
-    expected_output: "A concise and clear response."
