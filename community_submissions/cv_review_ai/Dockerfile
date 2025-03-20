@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the application code
 COPY . /app
 
+# Arguments
+ARG OPENAI_API_KEY
+
 # Install dependencies
 RUN pip install --upgrade pip
 RUN pip install poetry
